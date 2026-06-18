@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Personaltag 2. September 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --navy:    #1a2e4a;
+    --mid:     #2d4e73;
+    --steel:   #4a7094;
+    --water:   #7fb3d3;
+    --foam:    #d4eaf7;
+    --cream:   #f7f4ef;
+    --sand:    #e8e0d2;
+    --warm:    #c9b99a;
+    --text:    #1a1a1a;
+    --muted:   #6b6560;
+    --green:   #3d6b3f;
+    --green-bg:#e8f2e8;
+    --amber:   #7a4f1a;
+    --amber-bg:#f5ead8;
+  }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--cream);
+    color: var(--text);
+    min-height: 100vh;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    background: var(--navy);
+    padding: 0;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-waves {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 120px;
+    opacity: 0.12;
+  }
+
+  .hero-inner {
+    position: relative;
+    z-index: 1;
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 64px 32px 80px;
+    text-align: center;
+  }
+
+  .hero-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--water);
+    margin-bottom: 28px;
+  }
+
+  .hero-eyebrow::before,
+  .hero-eyebrow::after {
+    content: '';
+    display: block;
+    width: 28px;
+    height: 1px;
+    background: var(--water);
+    opacity: 0.6;
+  }
+
+  .hero h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(38px, 6vw, 58px);
+    font-weight: 400;
+    color: #fff;
+    line-height: 1.15;
+    margin-bottom: 16px;
+    letter-spacing: -0.01em;
+  }
+
+  .hero h1 em {
+    font-style: italic;
+    color: var(--water);
+  }
+
+  .hero-date {
+    font-size: 15px;
+    color: rgba(255,255,255,0.55);
+    letter-spacing: 0.04em;
+    margin-bottom: 40px;
+  }
+
+  .hero-date strong {
+    color: rgba(255,255,255,0.85);
+    font-weight: 500;
+  }
+
+  .hero-pills {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .pill {
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.14);
+    color: rgba(255,255,255,0.75);
+    font-size: 12px;
+    padding: 6px 14px;
+    border-radius: 20px;
+    letter-spacing: 0.02em;
+  }
+
+  /* ── CONTAINER ── */
+  .container {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 0 24px 80px;
+  }
+
+  /* ── INTRO ── */
+  .intro-block {
+    background: #fff;
+    border-radius: 16px;
+    padding: 40px;
+    margin-top: -32px;
+    position: relative;
+    z-index: 2;
+    box-shadow: 0 4px 24px rgba(26,46,74,0.08);
+  }
+
+  .intro-block p {
+    font-size: 16px;
+    line-height: 1.8;
+    color: var(--muted);
+  }
+
+  .intro-block p strong {
+    color: var(--text);
+    font-weight: 600;
+  }
+
+  /* ── SECTION HEADERS ── */
+  .section-eyebrow {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--steel);
+    margin: 56px 0 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .section-eyebrow::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--sand);
+  }
+
+  /* ── TIMELINE ── */
+  .timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    position: relative;
+  }
+
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 70px;
+    top: 0; bottom: 0;
+    width: 1px;
+    background: linear-gradient(to bottom, var(--foam), var(--sand));
+  }
+
+  .tl-item {
+    display: grid;
+    grid-template-columns: 70px 1fr;
+    gap: 0 20px;
+    position: relative;
+    padding-bottom: 28px;
+  }
+
+  .tl-item:last-child { padding-bottom: 0; }
+
+  .tl-time {
+    text-align: right;
+    padding-right: 36px;
+    padding-top: 14px;
+  }
+
+  .tl-time .t-main {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--navy);
+    line-height: 1;
+    white-space: nowrap;
+  }
+
+  .tl-time .t-label {
+    font-size: 10px;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-top: 3px;
+  }
+
+  .tl-dot {
+    position: absolute;
+    left: 64px;
+    top: 16px;
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    background: var(--navy);
+    border: 2px solid var(--cream);
+    box-shadow: 0 0 0 3px var(--foam);
+  }
+
+  .tl-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 18px 20px;
+    border: 1px solid var(--sand);
+  }
+
+  .tl-card h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 19px;
+    font-weight: 600;
+    color: var(--navy);
+    margin-bottom: 5px;
+    line-height: 1.3;
+  }
+
+  .tl-card p {
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+
+  .tl-card .tag-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 10px;
+  }
+
+  .tag {
+    font-size: 11px;
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-weight: 500;
+  }
+
+  .tag-blue { background: var(--foam); color: var(--mid); }
+  .tag-green { background: var(--green-bg); color: var(--green); }
+  .tag-amber { background: var(--amber-bg); color: var(--amber); }
+  .tag-navy { background: rgba(26,46,74,0.08); color: var(--navy); }
+
+  /* ── FÜHRUNGEN ── */
+  .fuehrungen-grid {
+    display: grid;
+    gap: 12px;
+  }
+
+  .fuehrung-card {
+    background: #fff;
+    border: 1px solid var(--sand);
+    border-radius: 12px;
+    padding: 20px 22px;
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .fuehrung-num {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: var(--navy);
+    color: #fff;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .fuehrung-body h4 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 19px;
+    font-weight: 600;
+    color: var(--navy);
+    margin-bottom: 4px;
+  }
+
+  .fuehrung-body p {
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+
+  .fuehrung-note {
+    font-size: 12px;
+    color: var(--steel);
+    margin-top: 4px;
+    font-style: italic;
+  }
+
+  /* ── TRANSPORT ── */
+  .transport-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+  }
+
+  @media (max-width: 520px) {
+    .transport-grid { grid-template-columns: 1fr; }
+  }
+
+  .transport-card {
+    background: #fff;
+    border: 1px solid var(--sand);
+    border-radius: 12px;
+    padding: 22px;
+    text-align: center;
+  }
+
+  .transport-icon {
+    font-size: 28px;
+    margin-bottom: 10px;
+  }
+
+  .transport-card h4 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--navy);
+    margin-bottom: 6px;
+  }
+
+  .transport-card p {
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+
+  .transport-price {
+    display: inline-block;
+    margin-top: 10px;
+    background: var(--foam);
+    color: var(--mid);
+    font-size: 12px;
+    font-weight: 600;
+    padding: 4px 12px;
+    border-radius: 20px;
+  }
+
+  .transport-note {
+    margin-top: 10px;
+    font-size: 11px;
+    color: var(--amber);
+    font-weight: 500;
+    background: var(--amber-bg);
+    padding: 4px 10px;
+    border-radius: 20px;
+  }
+
+  /* ── MENU ── */
+  .menu-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+  }
+
+  @media (max-width: 520px) {
+    .menu-grid { grid-template-columns: 1fr; }
+  }
+
+  .menu-card {
+    background: #fff;
+    border: 1px solid var(--sand);
+    border-radius: 12px;
+    padding: 22px;
+    text-align: center;
+  }
+
+  .menu-icon { font-size: 28px; margin-bottom: 10px; }
+
+  .menu-card h4 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--navy);
+    margin-bottom: 6px;
+  }
+
+  .menu-card p { font-size: 13px; color: var(--muted); line-height: 1.6; }
+
+  /* ── INFO BOX ── */
+  .info-box {
+    background: var(--foam);
+    border-left: 3px solid var(--steel);
+    border-radius: 0 10px 10px 0;
+    padding: 16px 20px;
+    font-size: 14px;
+    color: var(--mid);
+    line-height: 1.7;
+    margin-top: 24px;
+  }
+
+  .info-box strong { color: var(--navy); }
+
+  /* ── CTA ── */
+  .cta-block {
+    background: var(--navy);
+    border-radius: 16px;
+    padding: 40px;
+    text-align: center;
+    margin-top: 56px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cta-block::before {
+    content: '';
+    position: absolute;
+    top: -40px; right: -40px;
+    width: 160px; height: 160px;
+    border-radius: 50%;
+    background: rgba(127,179,211,0.1);
+  }
+
+  .cta-block h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 28px;
+    font-weight: 400;
+    color: #fff;
+    margin-bottom: 12px;
+  }
+
+  .cta-block p {
+    font-size: 14px;
+    color: rgba(255,255,255,0.6);
+    margin-bottom: 28px;
+    line-height: 1.7;
+  }
+
+  .cta-link {
+    display: inline-block;
+    background: var(--water);
+    color: var(--navy);
+    font-size: 14px;
+    font-weight: 600;
+    padding: 13px 32px;
+    border-radius: 8px;
+    text-decoration: none;
+    letter-spacing: 0.02em;
+  }
+
+  .cta-link:hover { background: #9dc7e2; }
+
+  .cta-deadline {
+    margin-top: 16px;
+    font-size: 12px;
+    color: rgba(255,255,255,0.4);
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    text-align: center;
+    padding: 32px 24px;
+    font-size: 12px;
+    color: var(--warm);
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 600px) {
+    .intro-block { padding: 28px 24px; margin-top: -20px; }
+    .hero-inner { padding: 48px 24px 64px; }
+    .tl-item { grid-template-columns: 56px 1fr; }
+    .tl-time { padding-right: 18px; }
+    .timeline::before { left: 50px; }
+    .tl-dot { left: 44px; }
+    .cta-block { padding: 28px 22px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<header class="hero">
+  <svg class="hero-waves" viewBox="0 0 1440 120" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M0,60 C360,120 720,0 1080,60 C1260,90 1380,30 1440,60 L1440,120 L0,120 Z" fill="#7fb3d3"/>
+    <path d="M0,80 C300,40 600,100 900,70 C1100,50 1300,90 1440,75 L1440,120 L0,120 Z" fill="#4a7094" opacity="0.5"/>
+  </svg>
+  <div class="hero-inner">
+    <div class="hero-eyebrow">Save the Date</div>
+    <h1>Unser <em>Personaltag</em><br>2026</h1>
+    <p class="hero-date"><strong>Mittwoch, 2. September 2026</strong> &nbsp;·&nbsp; Ab Wald</p>
+    <div class="hero-pills">
+      <span class="pill">Museum Neuthal</span>
+      <span class="pill">Museumsführung</span>
+      <span class="pill">Drachenboot</span>
+      <span class="pill">Grillplausch Lützelau</span>
+    </div>
+  </div>
+</header>
+
+<div class="container">
+
+  <!-- INTRO -->
+  <div class="intro-block">
+    <p>Liebe Kolleginnen und Kollegen,<br><br>
+    wir freuen uns, euch herzlich zu unserem diesjährigen Personaltag einzuladen! Ein abwechslungsreicher Tag erwartet uns: Morgens starten wir gemeinsam <strong>ab Wald oder Wetzikon</strong> mit dem ZVV ins Zürcher Oberland – das <strong>Museum Neuthal</strong> empfängt uns mit einer spannenden Themenführung und Kaffee &amp; Gipfeli. Am Mittag überqueren wir den See zur <strong>Lützelau</strong> und lassen den Tag beim gemütlichen Grillplausch ausklingen.<br><br>
+    Bitte meldet euch rechtzeitig an – Link und Anmeldeschluss findet ihr am Ende dieser Einladung.</p>
+  </div>
+
+  <div class="info-box" style="margin-top: 20px;">
+    <strong>Hinweis zur Teilnahme:</strong> Beim Personaltag handelt es sich um einen obligatorischen Weiterbildungstag (Sollzeit unabhängig vom Pensum für alle 08:24). Wer nicht teilnehmen will, hat einen Ferientag einzuziehen. Wer an diesem Tag arbeiten muss, informiert das HR via seine/ihre Abteilungsleitung mit Angabe einer Begründung (z.&nbsp;B. Dienst im Freibad).
+  </div>
+
+  <!-- TAGESABLAUF -->
+  <div class="section-eyebrow">Tagesablauf</div>
+
+  <div class="timeline">
+
+    <div class="tl-item">
+      <div class="tl-time">
+        <div class="t-main">07:40</div>
+        <div class="t-label">Uhr</div>
+      </div>
+      <div class="tl-dot"></div>
+      <div class="tl-card">
+        <h3>Treffpunkt Bahnhof Wald</h3>
+        <p>07:40 Uhr Treffpunkt Bahnhof Wald, Abfahrt 07:50 Uhr Gleis 1 – <strong>S26 Richtung Bauma</strong></p>
+        <div class="tag-row">
+          <a href="https://www.sbb.ch/de?stops=Wald+ZH_I8503138~Neuthal_I8503133&day=2026-09-02&time=07_17&moment=dep&trip=1" target="_blank" class="tag tag-navy" style="text-decoration:none; cursor:pointer;">🚆 Verbindung SBB</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-time">
+        <div class="t-main">07:40</div>
+        <div class="t-label">Uhr</div>
+      </div>
+      <div class="tl-dot"></div>
+      <div class="tl-card">
+        <h3>Treffpunkt Bahnhof Wetzikon</h3>
+        <p>07:40 Uhr Treffpunkt Bahnhof Wetzikon, Abfahrt 07:50 Uhr – <strong>Bus 850 Richtung Bauma</strong></p>
+        <div class="tag-row">
+          <a href="https://www.sbb.ch/de?stops=Wetzikon+ZH_I8503123~Neuthal_I8503133&day=2026-09-02&time=07_17&moment=dep&trip=1" target="_blank" class="tag tag-navy" style="text-decoration:none; cursor:pointer;">🚌 Verbindung SBB</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-time">
+        <div class="t-main">08:30</div>
+        <div class="t-label">Uhr</div>
+      </div>
+      <div class="tl-dot"></div>
+      <div class="tl-card">
+        <h3>Kaffee &amp; Gipfeli</h3>
+        <p>Herzlicher Empfang im Museum Neuthal mit Kaffee und Gipfeli.</p>
+        <div class="tag-row">
+          <span class="tag tag-blue">Kaffee & Gipfeli inkl.</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-time">
+        <div class="t-main">09:15</div>
+        <div class="t-label">Uhr</div>
+      </div>
+      <div class="tl-dot"></div>
+      <div class="tl-card">
+        <h3>Start Themenführungen</h3>
+        <p>09:15 / 09:30 Uhr Start der Führungen in vier Themengruppen. Bitte bei der Anmeldung vier Prioritäten angeben.</p>
+        <div class="tag-row">
+          <span class="tag tag-blue">4 Themengruppen</span>
+          <span class="tag tag-blue">ca. 15 Personen pro Gruppe</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-time">
+        <div class="t-main">11:18</div>
+        <div class="t-label">Uhr</div>
+      </div>
+      <div class="tl-dot"></div>
+      <div class="tl-card">
+        <h3>Weiterfahrt nach Rapperswil</h3>
+        <p>Gemeinsame Weiterfahrt von Neuthal nach Rapperswil mit dem ÖV.</p>
+        <div class="tag-row">
+          <a href="https://www.sbb.ch/de?stops=Neuthal_I8503133~Rapperswil+SG_I8503110&day=2026-09-02&time=07_17&moment=dep&cursor=M3xPRnxNVMK1MTTCtTM4MDc0NcK1MzgwNzQ1wrUzODA3OTHCtTM4MDc5McK1MMK1MMK1NcK1MzgwNzE2wrU1wrUwwrUxOMK1MMK1MMK1LTIxNDc0ODM2NDjCtTHCtTJ8UERIwrU2ZGZmYmQzZGQyZWI3NDAzYjk1NzQ0ZDE5NTZmOWNmNXxSRMK1MjA5MjAyNnxSVMK1NzE3MDB8VVPCtTB8UlPCtUlOSVQ=&trip=2" target="_blank" class="tag tag-navy" style="text-decoration:none; cursor:pointer;">🚌 Verbindung SBB</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-time">
+        <div class="t-main">12:15</div>
+        <div class="t-label">Uhr</div>
+      </div>
+      <div class="tl-dot"></div>
+      <div class="tl-card">
+        <h3>⛵ Gruppe Shuttle – Überfahrt Lützelau</h3>
+        <p>12:15 Uhr Treffpunkt beim <strong>Hafen Rapperswil</strong> – Überfahrt mit dem Shuttle auf die Insel Lützelau.<br>
+        <span style="font-size:12px; color:var(--amber); margin-top:4px; display:block;">ℹ Platz pro Boot: 12 Personen. Bei Bedarf kurze Wartezeit (~15 Min.) bis zum nächsten Shuttle.</span></p>
+        <div class="tag-row">
+          <a href="https://www.google.com/maps/place/Schifffahrtsbetrieb+Hensa+AG/@47.2257191,8.8094772,838m/data=!3m1!1e3!4m14!1m7!3m6!1s0x479ab6d23b3793c9:0x1a1587565bab05e0!2sInsel+L%C3%BCtzelau!8m2!3d47.2214995!4d8.7932819!16s%2Fg%2F1wyc396y!3m5!1s0x479ab6e079c1bdff:0x96e39ae14563a874!8m2!3d47.2255872!4d8.8147012!16s%2Fg%2F1tqt8n4y?entry=ttu&g_ep=EgoyMDI2MDYxMC4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="tag tag-blue" style="text-decoration:none; cursor:pointer;">📍 Hafen Rapperswil</a>
+          <span class="tag tag-amber">Hin- &amp; Rückfahrt mit Shuttle</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-time">
+        <div class="t-main">12:30</div>
+        <div class="t-label">Uhr</div>
+      </div>
+      <div class="tl-dot"></div>
+      <div class="tl-card">
+        <h3>🐉 Gruppe Drachenboot – Überfahrt Lützelau</h3>
+        <p>Nach Ankunft am Bahnhof Rapperswil: <strong>Fussmarsch zum Lido</strong> – dort starten die Drachenboote um 12:30 Uhr.<br>
+        <span style="font-size:12px; color:var(--amber); margin-top:4px; display:block;">⚠ Bitte trockene Wechselkleidung mitnehmen – es kann etwas nass werden!</span></p>
+        <div class="tag-row">
+          <span class="tag tag-amber">Hin- &amp; Rückfahrt mit Drachenboot</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-time">
+        <div class="t-main">13:30</div>
+        <div class="t-label">Uhr</div>
+      </div>
+      <div class="tl-dot"></div>
+      <div class="tl-card">
+        <h3>Grillplausch auf der Lützelau</h3>
+        <p>Entspannter Nachmittag auf der Insel – Grillieren, Getränke geniessen und den Tag gemeinsam ausklingen lassen.<br>
+        <span style="font-size:12px; color:var(--green); margin-top:4px; display:block;">🩱 Wer Lust hat: Badehose mitnehmen!</span></p>
+        <div class="tag-row">
+          <span class="tag tag-green">Fleisch & Vegi</span>
+          <span class="tag tag-green">Getränke vor Ort</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-time">
+        <div class="t-main">16:30</div>
+        <div class="t-label">Uhr</div>
+      </div>
+      <div class="tl-dot"></div>
+      <div class="tl-card">
+        <h3>Rückreise</h3>
+        <p>16:30 / 17:00 Uhr Rückfahrt mit Shuttle und Drachenboot nach Rapperswil – anschliessend individuelle Heimreise per ZVV.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- FÜHRUNGEN -->
+  <div class="section-eyebrow">Themenführungen Museum Neuthal</div>
+
+  <p style="font-size:14px; color:var(--muted); line-height:1.7; margin-bottom:20px;">
+    Bei der Anmeldung gebt ihr vier Prioritäten an. Wir verteilen euch möglichst nach Wunsch auf eine der vier Themenführungen (je ca. 15 Personen, Start 09:15/09:30 Uhr).
+  </p>
+
+  <div class="fuehrungen-grid">
+    <div class="fuehrung-card">
+      <div class="fuehrung-num">1</div>
+      <div class="fuehrung-body">
+        <h4>Spinnerei</h4>
+        <p>Einblick in die Geschichte und Technik der Spinnerei im Museum Neuthal.</p>
+        <p class="fuehrung-note">Dauer ca. 1.5 Std. · Gruppe à ca. 15 Personen</p>
+      </div>
+    </div>
+    <div class="fuehrung-card">
+      <div class="fuehrung-num">2</div>
+      <div class="fuehrung-body">
+        <h4>Weberei</h4>
+        <p>Wie aus Garn Gewebe wurde – die Weberei und ihre historischen Maschinen.</p>
+        <p class="fuehrung-note">Dauer ca. 1.5 Std. · Gruppe à ca. 15 Personen</p>
+      </div>
+    </div>
+    <div class="fuehrung-card">
+      <div class="fuehrung-num">3</div>
+      <div class="fuehrung-body">
+        <h4>Wasserkraft</h4>
+        <p>Energie aus dem Fluss: Wie das Wasser des Töss die Maschinen antrieb und die Region bis heute formt.</p>
+        <p class="fuehrung-note">Dauer ca. 1.5 Std. · Gruppe à ca. 15 Personen</p>
+      </div>
+    </div>
+    <div class="fuehrung-card">
+      <div class="fuehrung-num">4</div>
+      <div class="fuehrung-body">
+        <h4>Mode macht Geld</h4>
+        <p>Wie die Textilindustrie das Zürcher Oberland über Generationen prägte – von der Handweberei bis zur industriellen Produktion.</p>
+        <p class="fuehrung-note">Dauer ca. 1.5 Std. · Gruppe à ca. 15 Personen</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- TRANSPORT -->
+  <div class="section-eyebrow">Transport zur Lützelau</div>
+
+  <div class="transport-grid">
+    <div class="transport-card">
+      <div class="transport-icon">🐉</div>
+      <h4>Drachenboot</h4>
+      <p>Teamabenteuer auf dem Wasser – gemeinsam paddeln, Spass haben, ankommen. Hin- <em>und</em> Rückfahrt per Drachenboot.</p>
+      <div class="transport-note">⚠ Rückfahrt ebenfalls mit Drachenboot</div>
+    </div>
+    <div class="transport-card">
+      <div class="transport-icon">⛵</div>
+      <h4>Shuttle</h4>
+      <p>Entspannte Überfahrt per Shuttleboot ab Rapperswil. Ideal für alle, die lieber gemütlich ankommen.</p>
+    </div>
+  </div>
+
+  <!-- MENÜ -->
+  <div class="section-eyebrow">Menüwahl Grillplausch</div>
+
+  <div class="menu-grid">
+    <div class="menu-card">
+      <div class="menu-icon">🥩</div>
+      <h4>Fleisch</h4>
+      <p>Grill-Klassiker vom Rost – saftig, würzig, direkt vom Feuer.</p>
+    </div>
+    <div class="menu-card">
+      <div class="menu-icon">🥦</div>
+      <h4>Vegetarisch</h4>
+      <p>Vegetarische Spezialitäten vom Grill.</p>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div class="cta-block">
+    <h2>Jetzt anmelden</h2>
+    <p class="cta-deadline" style="margin-top:0; margin-bottom:24px;">Anmeldeschluss: 19. Juli 2026</p>
+    <p>Wählt eure Themenführung (4 Prioritäten), euren Transport und euer Menü. Die Anmeldung dauert nur wenige Minuten.</p>
+    <a href="https://forms.office.com/Pages/ResponsePage.aspx?id=6_zz2Tpw1EeBenn56joLWYUy8EI4oOBFjLOtwjsO6HlUOUZTTkdIM0JFOEdLSFJFVFU1M0RDSEoyWC4u" class="cta-link" target="_blank">Zur Anmeldung →</a>
+    <p class="cta-deadline" style="margin-top:16px;">Bei weiteren Fragen könnt ihr gerne Donatella Lienert oder Denise Zweifel kontaktieren.</p>
+  </div>
+
+</div>
+
+<footer>
+  Personaltag 2. September 2026 &nbsp;·&nbsp; Gemeinde Wald &nbsp;·&nbsp; Wir freuen uns auf euch!
+</footer>
+
+</body>
+</html>
